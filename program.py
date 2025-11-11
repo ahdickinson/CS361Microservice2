@@ -1,9 +1,9 @@
 import os
 import time
 
-DATABASE = "exampledatabase.txt" #enter database location
-PIPELINE = "examplepipeline.txt" #enter location + file extension for pipleine.txt
-SLEEP_INTERVAL = 2 #replace with number of seconds program should wait between checks
+DATABASE = "exampledatabase.txt"        # enter database location
+PIPELINE = "examplepipeline.txt"        # enter location + file extension for pipleine.txt
+SLEEP_INTERVAL = 2                      # replace with number of seconds program should wait between checks
 
 
 
