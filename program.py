@@ -1,5 +1,6 @@
 import os
 import time
+import json
 
 DATABASE = "exampledatabase.txt"        # enter database location
 PIPELINE = "examplepipeline.txt"        # enter location + file extension for pipleine.txt
@@ -24,19 +25,17 @@ def write_file(filepath, lines):
 
 
 
-# parsing objects
+# new function for parsing objects (json)
 
 def parse_object(line):
-    content = line[1:-1]
-    parts = content.split(";")
-    return parts
+    return json.loads(line)
 
 
 
-# formatting reply in same structure as request
+# new function for converting data back to json text
 
-def format_object(prop):
-    return "{" + ";".join(str(p) for p in prop) + "}"
+def format_json_object(obj):
+    return json.dumps(obj)
 
 
 
@@ -50,10 +49,10 @@ def find_matches(request_objects, database):
     matches = []
     for entry in database:
         match = True
-        for a, field in enumerate(request_objects):
-            if field == "":
+        for a, value in request_objects.items():
+            if value == "":
                 continue
-            if a >= len(entry) or entry [a] != field:
+            if a not in entry or entry[a] != value:
                 match = False
                 break
         if match:
@@ -68,13 +67,17 @@ def check_request():
     lines = read_file(PIPELINE)
     if len(lines) < 2 or lines[0].lower() != "request":
         return None
-    obj_line = lines[1]
-    return parse_object(obj_line)
+    obj_line = parse_object(lines[1])
+    return obj_line if isinstance(obj_line, dict) else None
+
+# write reply function
 
 def write_reply(objects):
     output_lines = ["reply"]
-    output_lines += [format_object(obj) for obj in objects]
+    for obj in objects:
+        output_lines.append(format_json_object(obj))
     write_file(PIPELINE, output_lines)
+
 
 
 
