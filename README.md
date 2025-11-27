@@ -13,16 +13,21 @@ For example, a database like the following:
 {"id": "005", "title": "Eldest", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2005, "pages": 704}
 
 would have a request for the object with id 003 like so:
-request
-{"id": "003", "title": "", "author": "", "genre": "", "year": "", "pages": ""}
 
+
+EXAMPLE REQUEST CALL:
+"request"
+"{"id": "003", "title": "", "author": "", "genre": "", "year": "", "pages": ""}"
+
+EXAMPLE REQUEST CALL:
 or for the author Christopher Paolini:
-request
-{"id": "", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}
+"request"
+"{"id": "", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}"
 
+EXAMPLE REQUEST CALL:
 or for both:
-request
-{"id": "001", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}
+"request"
+"{"id": "001", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}"
 
 
 
@@ -32,13 +37,19 @@ receiving data:
 
 contains two or more lines in a text document. First line is the string reply second line and on are objects in the database.
 The following are the replies for the above example requests.
-reply
-{"id": "003", "title": "Dune", "author": "Frank Herbert", "genre": "Science Fiction", "year": 1965, "pages": 412}
-reply
-{"id": "001", "title": "Eragon", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2002, "pages": 544}
-{"id": "005", "title": "Eldest", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2005, "pages": 704}
-reply
-{"id": "001", "title": "Eragon", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2002, "pages": 544}
+EXAMPLE RESPONSE:
+"reply"
+"{"id": "003", "title": "Dune", "author": "Frank Herbert", "genre": "Science Fiction", "year": 1965, "pages": 412}"
+
+EXAMPLE RESPONSE:
+"reply"
+"{"id": "001", "title": "Eragon", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2002, "pages": 544}"
+"{"id": "005", "title": "Eldest", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2005, "pages": 704}"
+
+EXAMPLE RESPONSE:
+"reply"
+"{"id": "001", "title": "Eragon", "author": "Christopher Paolini", "genre": "Fantasy", "year": 2002, "pages": 544}"
+
 
 
 
