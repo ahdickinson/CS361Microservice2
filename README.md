@@ -17,16 +17,19 @@ would have a request for the object with id 003 like so:
 
 EXAMPLE REQUEST CALL:
 "request"
+
 "{"id": "003", "title": "", "author": "", "genre": "", "year": "", "pages": ""}"
 
 EXAMPLE REQUEST CALL:
 or for the author Christopher Paolini:
 "request"
+
 "{"id": "", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}"
 
 EXAMPLE REQUEST CALL:
 or for both:
 "request"
+
 "{"id": "001", "title": "", "author": "Christopher Paolini", "genre": "", "year": "", "pages": ""}"
 
 
